@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Modenza | Everyday Photography, Composition and Light Explained</title>
+<meta name="description" content="Modenza is an independent reading space about everyday photography: how light, composition and simple camera settings work, with relaxed advice for phone and camera users.">
+
+<!-- Google AdSense / Google Ads script: paste your site code here (inside head) -->
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;700;800&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --char:#26282B;
+  --dusk:#3B5B7A;
+  --orange:#F07D2E;
+  --orange-d:#D8661A;
+  --bg:#F2F0EE;
+  --white:#FFFFFF;
+  --text:#2C2F33;
+  --muted:#5F656C;
+  --line:#DDD9D5;
+  --radius:8px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Public Sans',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.75;font-size:17px;width:100%;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:var(--dusk)}
+a:focus-visible,summary:focus-visible,.btn:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+h1,h2,h3{font-family:'Syne',system-ui,sans-serif;font-weight:700;line-height:1.12;color:var(--char);letter-spacing:-.015em}
+.wrap{width:100%;max-width:1200px;margin:0 auto;padding:0 28px}
+.narrow{max-width:780px}
+
+/* header */
+header{background:var(--white);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:74px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--char)}
+.brand span{font-family:'Syne',sans-serif;font-weight:800;font-size:1.55rem;letter-spacing:-.02em}
+nav ul{display:flex;gap:30px;list-style:none}
+nav a{color:var(--muted);text-decoration:none;font-weight:500;font-size:.94rem}
+nav a:hover{color:var(--char)}
+
+/* hero + film strip */
+.hero{padding:64px 0 0;background:var(--white)}
+.hero-top{display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:end;margin-bottom:44px}
+.hero h1{font-size:clamp(2.6rem,5.6vw,4.7rem)}
+.hero p{color:var(--muted);font-size:1.1rem;margin-bottom:24px}
+.btn{display:inline-block;background:var(--char);color:#fff;text-decoration:none;padding:14px 28px;border-radius:6px;font-weight:600;transition:background .2s}
+.btn:hover{background:var(--orange-d)}
+.strip{display:grid;grid-template-columns:1fr 1.5fr 1fr 1fr;gap:14px;height:380px}
+.strip div{overflow:hidden;border-radius:var(--radius);background:#c4c0bb}
+.strip img{width:100%;height:100%;object-fit:cover}
+.strip-cap{display:flex;justify-content:space-between;gap:20px;padding:14px 0 26px;font-size:.9rem;color:var(--muted)}
+
+/* sections */
+section{padding:84px 0}
+.white{background:var(--white)}
+.sec-head{max-width:700px;margin-bottom:44px}
+.sec-head h2{font-size:clamp(2rem,3.6vw,2.8rem);margin-bottom:14px}
+.sec-head p{color:var(--muted)}
+
+/* intro */
+.intro{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:start}
+.intro h2{font-size:clamp(2rem,3.4vw,2.7rem)}
+.intro p{margin-bottom:20px;color:var(--muted)}
+
+/* exposure trio */
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:0;background:var(--char);border-radius:var(--radius);overflow:hidden}
+.tr{padding:42px 34px;color:#D9DBDD}
+.tr+.tr{border-left:1px solid rgba(255,255,255,.14)}
+.tr .big{font-family:'Syne',sans-serif;font-weight:800;font-size:3.2rem;line-height:1;color:var(--orange);margin-bottom:12px}
+.tr h3{color:#fff;font-size:1.45rem;margin-bottom:10px}
+.tr p{font-size:.98rem}
+
+/* split */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.split.flip .pic{order:2}
+.pic{border-radius:var(--radius);overflow:hidden;background:#c4c0bb}
+.pic img{width:100%;height:100%;min-height:440px;object-fit:cover}
+.split h2{font-size:clamp(1.9rem,3.2vw,2.6rem);margin-bottom:18px}
+.split p{color:var(--muted);margin-bottom:18px}
+
+/* composition cards */
+.comp{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.cp{background:var(--bg);border-radius:var(--radius);padding:24px}
+.cp svg{width:100%;height:auto;border-radius:6px;margin-bottom:18px;background:#fff}
+.cp h3{font-size:1.3rem;margin-bottom:8px}
+.cp p{color:var(--muted);font-size:.98rem}
+
+/* light table */
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius);background:#fff}
+table{width:100%;border-collapse:collapse;min-width:680px}
+th,td{text-align:left;padding:16px 20px;border-bottom:1px solid var(--line);font-size:.97rem;vertical-align:top}
+th{background:var(--char);color:#fff;font-weight:600}
+tr:last-child td{border-bottom:none}
+td:first-child{font-weight:600;color:var(--char)}
+
+/* steps */
+.steps{list-style:none;counter-reset:s;display:grid;grid-template-columns:repeat(2,1fr);gap:0 56px}
+.steps li{counter-increment:s;padding:26px 0 26px 66px;border-top:1px solid var(--line);position:relative}
+.steps li::before{content:counter(s);position:absolute;left:0;top:24px;width:44px;height:44px;border-radius:50%;background:var(--orange);color:#fff;font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;display:flex;align-items:center;justify-content:center}
+.steps h3{font-size:1.25rem;margin-bottom:6px}
+.steps p{color:var(--muted);font-size:.98rem}
+
+/* gallery columns */
+.gal{columns:3;column-gap:16px}
+.gal figure{margin:0 0 16px;break-inside:avoid}
+.gal .ph{border-radius:var(--radius);overflow:hidden;background:#c4c0bb}
+.gal img{width:100%;object-fit:cover}
+.gal figcaption{font-size:.92rem;color:var(--muted);padding-top:8px}
+
+/* faq */
+details{border-bottom:1px solid var(--line);padding:20px 0}
+summary{cursor:pointer;font-weight:600;font-size:1.08rem;list-style:none;display:flex;justify-content:space-between;gap:20px;color:var(--char)}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.5rem;line-height:1;color:var(--orange)}
+details[open] summary::after{content:"\2212"}
+details p{margin-top:14px;color:var(--muted)}
+
+/* ad slots */
+.ad-slot{width:100%;max-width:1200px;margin:0 auto;padding:30px 28px;min-height:120px;text-align:center}
+
+/* disclaimer */
+.disclaimer{background:var(--white);border:1px solid var(--line);border-left:5px solid var(--orange);border-radius:var(--radius);padding:32px 36px}
+.disclaimer h3{font-size:1.4rem;margin-bottom:12px}
+.disclaimer p{color:var(--muted);font-size:.97rem;margin-bottom:10px}
+
+/* footer */
+footer{background:var(--char);color:#B3B7BC;padding:56px 0 32px}
+.foot{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;margin-bottom:32px}
+footer .brand,footer .brand span{color:#fff}
+.foot p{max-width:420px;font-size:.95rem;margin-top:14px}
+.foot ul{list-style:none}
+.foot li{margin-bottom:10px}
+.foot a{color:#fff;text-decoration:none}
+.foot a:hover{text-decoration:underline}
+.copy{border-top:1px solid rgba(255,255,255,.16);padding-top:20px;font-size:.88rem}
+
+@media(max-width:960px){
+  nav{display:none}
+  .hero-top,.intro,.split{grid-template-columns:1fr;gap:30px}
+  .strip{grid-template-columns:1fr 1fr;height:auto}
+  .strip div{height:200px}
+  .strip div:nth-child(2){height:200px}
+  .split.flip .pic{order:0}
+  .trio,.comp,.steps{grid-template-columns:1fr}
+  .tr+.tr{border-left:none;border-top:1px solid rgba(255,255,255,.14)}
+  .gal{columns:1}
+  .pic img{min-height:300px}
+  section{padding:58px 0}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#top" aria-label="Modenza home">
+      <svg width="36" height="36" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="9" fill="#26282B"/><circle cx="20" cy="21" r="8" fill="none" stroke="#fff" stroke-width="2.4"/><circle cx="20" cy="21" r="3" fill="#F07D2E"/><rect x="14" y="8" width="12" height="4" rx="1.5" fill="#fff"/></svg>
+      <span>Modenza</span>
+    </a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#exposure">Exposure</a></li>
+        <li><a href="#composition">Composition</a></li>
+        <li><a href="#light">Light</a></li>
+        <li><a href="#faq">Questions</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<div class="hero">
+  <div class="wrap">
+    <div class="hero-top">
+      <h1>See the light. Frame the moment.</h1>
+      <div>
+        <p>Modenza is an independent reading space about everyday photography. We explain light, composition and simple camera settings in plain language, for anyone with a phone or a camera.</p>
+        <a class="btn" href="#about">Start reading</a>
+      </div>
+    </div>
+    <div class="strip">
+      <div><img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=600&q=80" alt="Misty forest landscape in soft light" loading="eager"></div>
+      <div><img src="https://images.unsplash.com/photo-1452587925148-ce544e77e70d?auto=format&fit=crop&w=1000&q=80" alt="Camera resting on a wooden surface" loading="eager"></div>
+      <div><img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=600&q=80" alt="City street at golden hour" loading="eager"></div>
+      <div><img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=600&q=80" alt="Night sky above mountains" loading="eager"></div>
+    </div>
+    <div class="strip-cap"><span>Landscape</span><span>Gear</span><span>Street</span><span>Night</span></div>
+  </div>
+</div>
+
+<!-- INTRO -->
+<section id="about">
+  <div class="wrap intro">
+    <h2>Why Modenza exists</h2>
+    <div>
+      <p>Most people carry a capable camera everywhere they go, yet many photos end up flat, blurry or forgotten. The difference between a quick snapshot and an image you are proud of is rarely expensive equipment. It is usually understanding light, choosing a clear subject and taking a moment to frame it.</p>
+      <p>Modenza was created to explain these ideas calmly and clearly. Each article takes one concept, such as why early morning light looks so soft or how to use simple composition guides, and shows how you can apply it the next time you pick up your camera or phone.</p>
+      <p>We do not review products or push gear. Photography is a skill built through looking carefully and practising often, and our goal is to make that process more enjoyable.</p>
+    </div>
+  </div>
+</section>
+
+<div class="ad-slot">
+  <!-- Google ad unit 1: paste your ad code here -->
+  <!--
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="1111111111" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  -->
+</div>
+
+<!-- EXPOSURE -->
+<section id="exposure" class="white" style="padding-top:60px">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>The three settings behind every photo</h2>
+      <p>Whether you use a phone or a dedicated camera, exposure comes from three connected ideas. Understanding them helps you control brightness, sharpness and mood.</p>
+    </div>
+    <div class="trio">
+      <div class="tr">
+        <div class="big">A</div>
+        <h3>Aperture</h3>
+        <p>The size of the opening that lets light in. A wide opening gives a brighter image and a softly blurred background, while a narrow one keeps more of the scene sharp.</p>
+      </div>
+      <div class="tr">
+        <div class="big">S</div>
+        <h3>Shutter speed</h3>
+        <p>How long the sensor collects light. Fast speeds freeze movement such as running children or birds, and slow speeds let motion blur or capture dim scenes on a steady surface.</p>
+      </div>
+      <div class="tr">
+        <div class="big">I</div>
+        <h3>ISO</h3>
+        <p>How sensitive the camera is to light. Higher values brighten dark scenes but can add grain, so it is usually best to use the lowest value that still works.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE 1 -->
+<section>
+  <div class="wrap split">
+    <div class="pic"><img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=900&q=80" alt="Camera lens close up" loading="lazy"></div>
+    <div>
+      <h2>Phone or camera: both can work</h2>
+      <p>The best camera is the one you have with you, and modern phones are remarkably capable. They handle exposure automatically, offer helpful modes for portraits and low light, and make it easy to share what you capture right away.</p>
+      <p>A dedicated camera offers more manual control, interchangeable lenses and larger sensors, which can help in dim conditions or when you want a particular look. It also encourages a slower, more deliberate way of shooting that many photographers enjoy.</p>
+      <p>Neither is better in every situation. Start with what you already own, learn its strengths and only consider anything new when you clearly understand what you cannot yet do. The skills of seeing and framing transfer to every device.</p>
+    </div>
+  </div>
+</section>
+
+<!-- COMPOSITION -->
+<section id="composition" class="white">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Composition made simple</h2>
+      <p>Composition is how you arrange things inside the frame. These three simple guides help most everyday photos feel more balanced and intentional.</p>
+    </div>
+    <div class="comp">
+      <div class="cp">
+        <svg viewBox="0 0 300 200" role="img" aria-label="Rule of thirds grid with subject on a line intersection"><rect width="300" height="200" fill="#E8ECF0"/><path d="M100 0v200M200 0v200M0 67h300M0 133h300" stroke="#9AA6B2" stroke-width="1.5" fill="none"/><circle cx="200" cy="67" r="14" fill="#F07D2E"/></svg>
+        <h3>Rule of thirds</h3>
+        <p>Imagine the frame divided into a three-by-three grid. Placing your subject near a line or crossing point often looks more natural than centring it.</p>
+      </div>
+      <div class="cp">
+        <svg viewBox="0 0 300 200" role="img" aria-label="Leading lines converging toward a point"><rect width="300" height="200" fill="#E8ECF0"/><path d="M0 200L150 70M300 200L150 70M90 200L150 70M210 200L150 70" stroke="#3B5B7A" stroke-width="3" fill="none"/><circle cx="150" cy="70" r="9" fill="#F07D2E"/></svg>
+        <h3>Leading lines</h3>
+        <p>Roads, fences, rivers and shadows can guide the viewer's eye through the picture towards your subject and create a sense of depth.</p>
+      </div>
+      <div class="cp">
+        <svg viewBox="0 0 300 200" role="img" aria-label="A subject surrounded by a natural frame"><rect width="300" height="200" fill="#E8ECF0"/><rect x="40" y="25" width="220" height="150" rx="8" fill="none" stroke="#3B5B7A" stroke-width="14"/><circle cx="150" cy="100" r="22" fill="#F07D2E"/></svg>
+        <h3>Natural framing</h3>
+        <p>Use a doorway, window or branches around the edge of the scene to frame your subject, adding focus and context at the same time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHT TABLE -->
+<section id="light">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>How light changes through the day</h2>
+      <p>The same scene can look completely different depending on when you photograph it. Here is a general guide. Exact timing varies with season and location.</p>
+    </div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Time</th><th>Quality of light</th><th>Great for</th><th>Watch out for</th></tr></thead>
+        <tbody>
+          <tr><td>Golden hour</td><td>Warm, low and soft, shortly after sunrise or before sunset</td><td>Portraits, landscapes, streets</td><td>Fades quickly, so arrive early</td></tr>
+          <tr><td>Midday</td><td>Bright, high and harsh</td><td>Graphic shapes, strong shadows</td><td>Squinting faces and blown-out highlights</td></tr>
+          <tr><td>Overcast</td><td>Soft, even and diffused</td><td>Portraits, flowers, detail shots</td><td>Skies can look dull and grey</td></tr>
+          <tr><td>Blue hour</td><td>Deep blue tones just after sunset</td><td>City scenes, moody landscapes</td><td>Needs steady hands or a support</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- EDITING STEPS -->
+<section class="white">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>A gentle approach to editing</h2>
+      <p>Editing should support the photograph, not rescue it. This simple order keeps changes natural.</p>
+    </div>
+    <ol class="steps">
+      <li><h3>Crop and straighten</h3><p>Fix a tilted horizon and trim distracting edges so the subject is clear.</p></li>
+      <li><h3>Adjust exposure</h3><p>Brighten or darken slightly until the image matches how the scene felt.</p></li>
+      <li><h3>Balance contrast</h3><p>Lift shadows or soften highlights if detail is lost at either end.</p></li>
+      <li><h3>Refine colour</h3><p>Correct any colour cast and add gentle warmth or coolness if it suits the mood.</p></li>
+      <li><h3>Sharpen lightly</h3><p>Add a small amount of sharpness at the end, since too much looks artificial.</p></li>
+      <li><h3>Step away and review</h3><p>Look again after a break. Fresh eyes spot over-editing quickly.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ARTICLE 2 -->
+<section>
+  <div class="wrap split flip">
+    <div class="pic"><img src="https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?auto=format&fit=crop&w=900&q=80" alt="Warm golden light over a quiet landscape" loading="lazy"></div>
+    <div>
+      <h2>Learning to see, not just shoot</h2>
+      <p>Good photographers spend as much time looking as clicking. Before raising the camera, notice where the light falls, what lies behind your subject and whether anything distracting is near the edges. A small step to the side often cleans up the whole image.</p>
+      <p>Give yourself simple projects, such as photographing one colour for a week, one street at different times of day, or a single object from ten angles. Constraints sharpen your attention and push you beyond obvious first shots.</p>
+      <p>Review your work with kindness and curiosity. Choose a few images you like, ask what makes them work and try to repeat that quality next time. Progress in photography is quiet and cumulative, and it is surprisingly enjoyable.</p>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="white">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Frames worth studying</h2>
+      <p>Notice how light, subject and framing work together in each of these scenes.</p>
+    </div>
+    <div class="gal">
+      <figure><div class="ph"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=700&q=80" style="height:420px" alt="Portrait in soft natural light" loading="lazy"></div><figcaption>Soft window light flatters portraits.</figcaption></figure>
+      <figure><div class="ph"><img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=700&q=80" style="height:280px" alt="City skyline and streets" loading="lazy"></div><figcaption>Cities offer lines, shapes and layers.</figcaption></figure>
+      <figure><div class="ph"><img src="https://images.unsplash.com/photo-1493863641943-9b68992a8d07?auto=format&fit=crop&w=700&q=80" style="height:340px" alt="Camera with printed photographs" loading="lazy"></div><figcaption>Printing photos helps you see them differently.</figcaption></figure>
+      <figure><div class="ph"><img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=700&q=80" style="height:300px" alt="Vintage camera detail" loading="lazy"></div><figcaption>Old cameras remind us to slow down.</figcaption></figure>
+      <figure><div class="ph"><img src="https://images.unsplash.com/photo-1495707902641-75cac588d2e9?auto=format&fit=crop&w=700&q=80" style="height:380px" alt="Camera on a table with lens" loading="lazy"></div><figcaption>Simple equipment is enough to begin.</figcaption></figure>
+      <figure><div class="ph"><img src="https://images.unsplash.com/photo-1471341971476-ae15ff5dd4ea?auto=format&fit=crop&w=700&q=80" style="height:260px" alt="Wide mountain landscape" loading="lazy"></div><figcaption>Wide scenes reward patience and timing.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<div class="ad-slot">
+  <!-- Google ad unit 2: paste your ad code here -->
+  <!--
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="2222222222" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  -->
+</div>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap narrow">
+    <div class="sec-head"><h2>Common questions</h2></div>
+    <details>
+      <summary>Is Modenza a camera store or photo service?</summary>
+      <p>No. Modenza is an informational website. We do not sell cameras, lenses, accessories, prints or editing services. The pages are written only to share general photography ideas and knowledge.</p>
+    </details>
+    <details>
+      <summary>Do I need an expensive camera to take good photos?</summary>
+      <p>Not at all. Light, composition and timing matter far more than equipment. A modern phone is perfectly capable of excellent images when you pay attention to these basics.</p>
+    </details>
+    <details>
+      <summary>Why are my photos blurry?</summary>
+      <p>The usual causes are a shutter speed that is too slow for the movement, a shaky hold or missed focus. Try holding the camera steadier, bracing your elbows, using better light or tapping to focus on your subject.</p>
+    </details>
+    <details>
+      <summary>What is the best time of day to photograph outdoors?</summary>
+      <p>Many photographers favour the hour after sunrise and before sunset because the light is soft and warm. Overcast days are also lovely for portraits and detail shots.</p>
+    </details>
+    <details>
+      <summary>Is it okay to photograph people in public?</summary>
+      <p>Rules differ by country and situation. It is courteous to ask permission for close portraits and to respect privacy, especially with children. Check the local laws and rules where you are.</p>
+    </details>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<section style="padding-top:0">
+  <div class="wrap narrow">
+    <div class="disclaimer" role="note">
+      <h3>Disclaimer</h3>
+      <p>The content on Modenza is provided for general informational and educational purposes only. It reflects common observations about photography and should not be treated as professional photographic, legal, safety or technical advice.</p>
+      <p>Camera behaviour, settings and lighting conditions vary by device and situation. Laws about photographing people, property and public places differ by location, so please check the rules that apply to you and respect other people's privacy. Take care when shooting outdoors, near traffic or in remote areas. Images are used for illustration only and do not represent or endorse any specific product, brand or service.</p>
+      <p>Modenza does not sell products or services and makes no guarantees about results from applying the ideas shared here. Any decision you make is your own responsibility. Third-party advertising may appear on this site, and we are not responsible for the content of external advertisers.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="brand" href="#top" aria-label="Modenza home">
+          <svg width="36" height="36" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="9" fill="#fff"/><circle cx="20" cy="21" r="8" fill="none" stroke="#26282B" stroke-width="2.4"/><circle cx="20" cy="21" r="3" fill="#F07D2E"/><rect x="14" y="8" width="12" height="4" rx="1.5" fill="#26282B"/></svg>
+          <span>Modenza</span>
+        </a>
+        <p>An independent reading space about everyday photography, light and composition.</p>
+      </div>
+      <ul>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms &amp; Conditions</a></li>
+      </ul>
+    </div>
+    <div class="copy">&copy; 2026 Modenza. All rights reserved.</div>
+  </div>
+</footer>
+
+</body>
+</html>
